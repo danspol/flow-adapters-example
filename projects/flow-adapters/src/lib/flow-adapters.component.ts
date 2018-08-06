@@ -5,6 +5,8 @@ import { Component, OnInit } from '@angular/core';
   template: `
     <p>
       flow-adapters works!
+      Yes!! XXXX ...
+      
     </p>
   `,
   styles: []
