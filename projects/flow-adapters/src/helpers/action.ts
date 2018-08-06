@@ -1,13 +1,13 @@
 import {Action} from "@ngrx/store";
+import {mapValues} from 'lodash';
 
 export function createActionTypes(actionTypes) {
 
   return function <T>(type): T | any {
 
-    return Object.entries(actionTypes).reduce((result, [key, action]) => {
-      result[key] = actionTypeNameFactory(type, action);
-      return result;
-    }, {});
+    return mapValues(actionTypes, (action) => {
+      return actionTypeNameFactory(type, action);
+    });
   };
 }
 
